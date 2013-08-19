@@ -1,5 +1,4 @@
-#DANCING BONE MACHINE
+##DANCING BONE MACHINE EXAMPLE APP
 
-A toolkit for creating audio and musical applications and plugins with HTML and [PD](http://puredata.info/).
+An application to illustrate the use of the [Dancing Bone Machine](http://dancingbonemachine.elsoftwarehamuerto.org) toolkit. Step by step instructions are available [here](http://dancingbonemachine.elsoftwarehamuerto.org/tutorial.html). 
 
-More info available [here](http://dancingbonemachine.elsoftwarehamuerto.org).
