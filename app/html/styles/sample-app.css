@@ -1,0 +1,150 @@
+/*  
+    Copyright (c) 2013 Rafael Vega González <rvega@elsoftwarehamuerto.org>
+
+    Dancing Bone Machine is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Dancing Bone Machine is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+
+*{
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+   -webkit-user-select: none;
+   /* user-select: none; */
+}
+
+label{
+   font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+   color: #ffec03;
+   font-size: 18px;
+   font-weight: bold;
+}
+
+html, document, body{
+   height:100%;
+   margin:0px;
+   padding: 0px;
+}
+
+
+#main-container{
+   position:relative;
+   margin: 0px;
+   padding:0px;
+   height: 1024px;
+   width: 748px;
+   background-color:#222;
+}
+
+#piano-scroll{
+   height: 30%;
+   width: 100%;
+   overflow-y: hidden;
+   overflow-x: auto;
+}
+
+#piano{
+   height:100%;
+   width: 800%;
+}
+
+.octave{
+   position:relative;
+   height: 100%;
+   width: 8.8%;
+   float:left;
+   background: url(piano.png) no-repeat center center;
+   background-size: 100% 100%;
+}
+
+.key{
+   float: left;
+}
+
+.white{
+   width: 14.28%;
+   height: 100%;
+}
+
+.white > span{
+   display:block;
+   margin-top: 278%;
+   margin-left:23%;
+}
+
+.blacks{
+   height: 66%;
+   width: 81%;
+   position: absolute;
+   left:9.7%;
+}
+
+.blacks > .key{
+   z-index: 2;
+   width: 11.7%;
+   height: 100%;
+   margin-right: 6%;
+}
+
+.blacks > .key.more-margin{
+   margin-right:23.5%;
+}
+.blacks > .key:last-child{
+   margin-right: 0px;
+}
+
+#oscilloscope{
+   clear:both;
+   height: 60%;
+   padding: 5% 10%;
+}
+
+#oscilloscope canvas{
+   border: 1px solid #ffec03;
+}
+
+#controls{
+   height: 70%;
+}
+
+.control{
+   margin: 5% 5% 5% 14%;
+   float:left;
+}
+
+.control label{
+   display: block;
+   text-align:center;
+}
+
+@media all and (min-width: 748px){
+   #main-container{
+      height: 1024px;
+      width: 768px;
+   }
+}
+
+@media all and (min-width: 351px) and (max-width: 749px){
+   #main-container{
+      height: 600px;
+      width: 450px;
+      border: 1px solid grey;
+   } 
+}
+
+@media all and (max-width: 350px){
+   /* html, document, body, #main-container{ */
+   #main-container{
+      height: 460px;
+      width: 320px;
+   }
+}

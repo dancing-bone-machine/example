@@ -1,48 +1,87 @@
 <!DOCTYPE HTML>
+
+<!-- 
+    Copyright (c) 2013 Rafael Vega González <rvega@elsoftwarehamuerto.org>
+
+    Dancing Bone Machine is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Dancing Bone Machine is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
 <html>
 <head>
    <meta charset="utf-8" />
    <meta name="format-detection" content="telephone=no" />
    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
 
-   <title>Dancing Bone Machine</title>
+   <title>Dancing Bone Machine Tutorial App</title>
 
-   <link rel="stylesheet" href="styles/style.css" type="text/css" media="all" />
+   <link rel="stylesheet" href="styles/sample-app.css" type="text/css" media="all" />
 
    <script src="scripts/dancing-bone-machine/dancing-bone-machine.js" type="text/javascript" charset="utf-8"></script>
+   <script src="scripts/sample-app.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
+   <div id="main-container">
+      <div id="controls">
+         <div class="control">
+            <input id="volume" type="tel" class="knob" value="50" data-min="0" data-max="100" />
+            <label>Volume</label>
+         </div>
+         <div class="control">
+            <input id="waveform" type="tel" class="knob" value="50" data-min="0" data-max="100" />
+            <label>Wave Form</label>
+         </div>
+         <div id="oscilloscope">
+            <canvas></canvas>
+         </div>
+      </div>
 
-   <button id="btn" type="button">Click Me!</button>
-
-   <script type="text/javascript" charset="utf-8">
-      var sound_on = false;
-
-      function button(e){
-         // When the button is clicked, send a message to PD.
-         if(sound_on){
-            PD.sendFloat(0, 'volume');
-            sound_on = false;
-         }
-         else{
-            PD.sendFloat(1, 'volume');
-            sound_on = true;
-         }
-      }
-
-      function main(){
-         // Init PureData engine and load synth.pd patch.
-         PD.configurePlayback(44100, 2, false, false, function(){
-            PD.openFile('pd/patches', 'patch.pd', function(){
-               PD.setActive(true);
-               PD.sendFloat(0, 'volume');
-            });
-         });
-
-         var btn = document.getElementById('btn');
-         btn.onmouseup = button;
-         btn.ontouchend = button;
-      };
-   </script>
+      <div id="piano-scroll">
+         <div id="piano">
+            <div class="octave" data-octave="4"> 
+               <div class="key white" data-note-number="0"></div>
+               <div class="key white" data-note-number="2"></div>
+               <div class="key white" data-note-number="4"></div>
+               <div class="key white" data-note-number="5"></div>
+               <div class="key white" data-note-number="7"></div>
+               <div class="key white" data-note-number="9"></div>
+               <div class="key white" data-note-number="11"></div>
+               <div class="blacks">
+                  <div class="key" data-note-number="1"></div>
+                  <div class="key more-margin" data-note-number="3"></div>
+                  <div class="key" data-note-number="6"></div>
+                  <div class="key" data-note-number="8"></div>
+                  <div class="key" data-note-number="10"></div>
+               </div>
+            </div>
+            <div class="octave" data-octave="5"> 
+               <div class="key white" data-note-number="0"></div>
+               <div class="key white" data-note-number="2"></div>
+               <div class="key white" data-note-number="4"></div>
+               <div class="key white" data-note-number="5"></div>
+               <div class="key white" data-note-number="7"></div>
+               <div class="key white" data-note-number="9"></div>
+               <div class="key white" data-note-number="11"></div>
+               <div class="blacks">
+                  <div class="key" data-note-number="1"></div>
+                  <div class="key more-margin" data-note-number="3"></div>
+                  <div class="key" data-note-number="6"></div>
+                  <div class="key" data-note-number="8"></div>
+                  <div class="key" data-note-number="10"></div>
+               </div>
+            </div>
+         </div> 
+      </div>
+   </div>
 </body>
 </html>
