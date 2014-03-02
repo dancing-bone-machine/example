@@ -1,3 +1,0 @@
-[submodule "library/vendors/pd-for-ios"]
-	path = library/vendors/pd-for-ios
-	url = https://github.com/dancing-bone-machine/pd-for-ios.git
